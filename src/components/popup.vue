@@ -16,7 +16,9 @@
         <v-card-title class="headline">Add a New Project</v-card-title>
 
         <v-card-text>
-          Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+           <v-text-field label="Title" v-model="title" prepend-icon="mdi-folder"></v-text-field>
+           <v-textarea label="Information" v-model="information" prepend-icon="mdi-pencil"></v-textarea>
+           <v-btn text class="success mx-0 mt-3" @click="submit">Add Project</v-btn>
         </v-card-text>
 
         <v-card-actions>
@@ -31,8 +33,15 @@
     data () {
       return {
         dialog: false,
+        title: '',
+        information: ''
       }
     },
+    methods: {
+      submit() {
+        console.log(this.title, this.information)
+      }
+    }
   }
 </script>
 
